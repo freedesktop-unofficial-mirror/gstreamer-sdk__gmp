@@ -423,7 +423,7 @@ long __MPN(count_leading_zeros) _PROTO ((UDItype));
 	     "rIJ" ((USItype) (bl)))
 #endif
 
-#if defined (__arm__) && W_TYPE_SIZE == 32
+#if defined (__arm__) && W_TYPE_SIZE == 32 && !defined(__thumb__)
 #define add_ssaaaa(sh, sl, ah, al, bh, bl) \
   __asm__ ("adds\t%1, %4, %5\n\tadc\t%0, %2, %3"			\
 	   : "=r" (sh), "=&r" (sl)					\
